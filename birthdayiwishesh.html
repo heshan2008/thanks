@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <title>ස්තුතියි!</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(to right, #fff4e6, #ffe9b8);
+            font-family: 'Iskoola Pota', 'Noto Sans Sinhala', sans-serif;
+            text-align: center;
+            transition: background 1s ease-in-out;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            max-width: 700px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #d35400;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Gradient Animation */
+        @keyframes animatedGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-bg {
+            animation: animatedGradient 10s ease infinite;
+            background: linear-gradient(-45deg, #ffecd2, #fcb69f, #ffe9b8, #ffcccb);
+            background-size: 400% 400%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="inputSection">
+        <h1>🎂 මගේ උපන්දිනයට සුභ පතපු ඔබට ස්තුතියි! 🎂</h1>
+        <p>ඔබේ නම ඇතුළත් කරන්න:</p>
+        <input type="text" id="nameInput" placeholder="ඔබේ නම">
+        <br>
+        <button onclick="showMessage()">Enter</button>
+    </div>
+
+    <div class="container" id="thankYouSection" style="display: none;">
+        <h1>💖 ස්තුතියි! 💖</h1>
+        <p id="thankMessage"></p>
+    </div>
+
+    <footer>
+        © 2025 Heshan. All rights reserved.
+    </footer>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById("nameInput").value.trim();
+            if (name) {
+                document.getElementById("inputSection").style.display = "none";
+                document.getElementById("thankYouSection").style.display = "block";
+                document.getElementById("thankMessage").innerHTML = `
+                    අවුරුද්දෙ මාස 12 මම ඉපදුනු දවස මතක තියාගෙන<br>
+                    මට සුභ පතපු <strong>${name}</strong> ඔයාට ගොඩක් ස්තූතියි! 🙏<br><br>
+                    ඔබේ මිත්‍රශීලිත්වය සහ මතක තැබීම මට හැම විටම වටිනවා. 💛 <br>Heshan✍️</br>` ;
+
+                // Apply gradient animation to body
+                document.body.classList.add("animated-bg");
+            } else {
+                alert("කරුණාකර ඔබේ නම ඇතුළත් කරන්න 😊");
+            }
+        }
+    </script>
+</body>
+</html>
